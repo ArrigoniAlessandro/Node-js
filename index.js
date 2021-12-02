@@ -13,6 +13,9 @@ var host = "localhost";
 apiServer.listen(port,host,()=>{ //attiva il processo web server in ascolto
 console.log("server running at http://%s:%d",host,port )
 });
-apiServer.get("/", ()=>{
-console.log("sono in get");
+apiServer.get("/", (request, response)=>{
+console.log("sono in get /", request);
+response.send("<h1>ciao sono il client sei in home</h1> "); //risposta 
+
+
 })
