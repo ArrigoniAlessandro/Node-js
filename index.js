@@ -51,7 +51,7 @@ fs.readFile("Studenti.js", (err, data) =>{
 
 apiServer.get("/newStudent",(request, response)=>{
 console.log("/nuovo Studente", request.query.id, request.query.nome, request.id);
-fs.writeFile("studenti.js",(err, data)=>{
+fs.readFile("studenti.js",(err, data)=>{
 if(err){
 console.log("error:"+err);
 }else{
