@@ -1,4 +1,4 @@
-const { request, response } = require("express");
+const { request, response, query } = require("express");
 var express = require("express"); //dichiarare utilizzo del node modules
 var apiServer = express();
 
@@ -28,3 +28,9 @@ apiServer.get("/mioNome", (request, response) => {
   console.log(request.query.nome);
   response.send("<h1>il mio nome è:</h1>");
 });
+
+apiServer.get("somma", (request, response) => {
+  console.log("somma request", request.query);
+  response.send("risultato"+ request.query.a-(- request.query.b));
+});
+
