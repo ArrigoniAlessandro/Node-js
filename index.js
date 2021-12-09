@@ -38,7 +38,13 @@ apiServer.get("somma", (request, response) => {
 apiServer.get("Student", (request, response) => {
 console.log("/Student id", request.query.id);
 //leggere il file
-fs.readFile("Studenti.js"); 
+fs.readFile("Studenti.js", (err, data) =>{
+  if(err){console.log("errore"+err);
+}else{
+  var students = JSON.parse(data);
+  console.log("students:"+students);
+}
+});
 //prelevare l'oggetto con id = 1
 //send
 });
