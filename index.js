@@ -1,6 +1,7 @@
 const { request, response, query } = require("express");
 var express = require("express"); //dichiarare utilizzo del node modules
 var apiServer = express();
+var fs = require ("fs");
 
 /* console.log("funziona");
 var a = 5; 
@@ -32,5 +33,13 @@ apiServer.get("/mioNome", (request, response) => {
 apiServer.get("somma", (request, response) => {
   console.log("somma request", request.query);
   response.send("risultato"+ request.query.a-(- request.query.b));
+});
+
+apiServer.get("Student", (request, response) => {
+console.log("/Student id", request.query.id);
+//leggere il file
+fs.readFile("Studenti.js"); 
+//prelevare l'oggetto con id = 1
+//send
 });
 
