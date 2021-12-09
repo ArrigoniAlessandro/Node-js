@@ -42,7 +42,7 @@ fs.readFile("Studenti.js", (err, data) =>{
   if(err){console.log("errore"+err);
 }else{
   var students = JSON.parse(data);
-  console.log("students:"+students);
+  console.log("students:"+students[0].surname);
 }
 });
 //prelevare l'oggetto con id = 1
