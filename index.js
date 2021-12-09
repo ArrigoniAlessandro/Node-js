@@ -2,6 +2,7 @@ const { request, response, query } = require("express");
 var express = require("express"); //dichiarare utilizzo del node modules
 var apiServer = express();
 var fs = require ("fs");
+const { setFlagsFromString } = require("v8");
 
 /* console.log("funziona");
 var a = 5; 
@@ -46,11 +47,18 @@ fs.readFile("Studenti.js", (err, data) =>{
   students.find(x => x.id === request.query.id));
 }
 });
-
-//prelevare l'oggetto con id = 1
-//send
-
 });
 
-
+apiServer.get("/newStudent",(request, response)=>{
+console.log("/nuovo Studente", request.query.id, request.query.nome, request.id);
+fs.writeFile("studenti.js",(err, data)=>{
+if(err){
+console.log("error:"+err);
+}else{
+  var studenti = JSON.parse(data);
+  studenti[studenti.length+1]=request.query.data;
+  console.log("surname:"+ request.query.surname,"name:"+ request.query.name, "id:"+request.query.id);
+}
+});
+});
 
