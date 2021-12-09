@@ -6,12 +6,10 @@
 },
 
 {
+
 "surname": "Alampi",
  "name": "Adrian",
  "id" : 2
 
 }
-
-
-
 ]

@@ -35,7 +35,7 @@ apiServer.get("somma", (request, response) => {
   response.send("risultato"+ request.query.a-(- request.query.b));
 });
 
-apiServer.get("Student", (request, response) => {
+apiServer.get("/Student", (request, response) => {
 console.log("/Student id", request.query.id);
 //leggere il file
 fs.readFile("Studenti.js", (err, data) =>{
